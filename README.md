@@ -1,4 +1,6 @@
 # Installation
+This program currently only works in Python 2.7, due to incompatibilities in libraries it requires.
+
 To install the requirements
 
 ```shell
@@ -15,6 +17,17 @@ python simple_checker.py inputfile.txt outputfile.txt
 
 ## Options
 If you use "-" for the input or output files, the program will use stdin or stdout, respectively.
+
+# Output
+
+Output will be in the tab-separated format `<address>	<TRUE or FALSE>	<BALANCE>` with the balance expressed in Satoshis. (0.00000001 BTC)
+So, a balance line like
+
+```
+1DS57SoKe2bRxBuR2ayjjz3tb5JFxsdZEk      TRUE    6800000
+```
+
+means that that address has a non-zero balance of 0.068 BTC.
 
 # Required Libraries
 

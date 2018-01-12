@@ -45,8 +45,12 @@ def main(input_stream,output_stream,group_size=200):
 		for one_addr in one_group:
 			one_balance = group_balances[one_addr].final_balance
 
-			print("{}\t{}\t{}".format(str(one_addr),str(one_balance > 0.0).upper(), one_balance),file=output_stream)
+			#Uncomment and use theses lines to express as BTC instead of Satoshis
+			#one_balance = one_balance*0.00000001
+			#print("{}\t{}\t{:.8f}".format(str(one_addr),str(one_balance > 0.0).upper(), one_balance),file=output_stream)
 
+			#This line prints the balance as Satoshis.
+			print("{}\t{}\t{}".format(str(one_addr),str(one_balance > 0.0).upper(), one_balance),file=output_stream)
 
 
 
@@ -66,15 +70,16 @@ if __name__ == "__main__":
 		in_stream = sys.stdin
 	else:
 		try:
-			in_stream = file(args.input)
-		except:
+			in_stream = open(args.input)
+		except Exception as e:
 			print("Could not open the specified input file.",file=sys.stderr)
+			print(e,file=sys.stderr)
 			sys.exit(1)
 
 	if args.output == "-":
 		out_stream = sys.stdout
 	else:
-		out_stream = file(args.output,"w")
+		out_stream = open(args.output,"w")
 
 
 	main(in_stream, out_stream, group_size=200)
