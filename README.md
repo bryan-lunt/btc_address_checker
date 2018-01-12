@@ -5,10 +5,13 @@ To install the requirements
 pip install -r requirements.txt
 ```
 
-#running
+# Running
 
 to run the program, type
 
 ```shell
 python simple_checker.py inputfile.txt outputfile.txt
 ```
+
+## Options
+If you use "-" for the input or output files, the program will use stdin or stdout, respectively.
