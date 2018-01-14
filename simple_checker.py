@@ -46,11 +46,11 @@ def main(input_stream,output_stream,group_size=200):
 			one_balance = group_balances[one_addr].final_balance
 
 			#Uncomment and use theses lines to express as BTC instead of Satoshis
-			#one_balance = one_balance*0.00000001
-			#print("{}\t{}\t{:.8f}".format(str(one_addr),str(one_balance > 0.0).upper(), one_balance),file=output_stream)
+			one_balance = one_balance*0.00000001
+			print("{}\t{}\t{:.8f}".format(str(one_addr),str(one_balance > 0.0).upper(), one_balance),file=output_stream)
 
 			#This line prints the balance as Satoshis.
-			print("{}\t{}\t{}".format(str(one_addr),str(one_balance > 0.0).upper(), one_balance),file=output_stream)
+			#print("{}\t{}\t{}".format(str(one_addr),str(one_balance > 0.0).upper(), one_balance),file=output_stream)
 
 
 
