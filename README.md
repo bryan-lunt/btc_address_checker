@@ -20,14 +20,16 @@ If you use "-" for the input or output files, the program will use stdin or stdo
 
 # Output
 
-Output will be in the tab-separated format `<address>	<TRUE or FALSE>	<BALANCE>` with the balance expressed in Satoshis. (0.00000001 BTC)
+Output will be in the tab-separated format `<address>	<TRUE or FALSE>	<BALANCE>` with the balance expressed in BTC.
 So, a balance line like
 
 ```
-1DS57SoKe2bRxBuR2ayjjz3tb5JFxsdZEk      TRUE    6800000
+1DS57SoKe2bRxBuR2ayjjz3tb5JFxsdZEk      TRUE    0.06800000
 ```
 
 means that that address has a non-zero balance of 0.068 BTC.
+
+Previously, the balance was expressed in Satoshis, and future versions may make this an optional behaviour.
 
 # Required Libraries
 
